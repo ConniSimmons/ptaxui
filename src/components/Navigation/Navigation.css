@@ -1,0 +1,43 @@
+.main-nav {
+    display: flex;
+    flex-flow: row;
+    padding: 0.5em 0;
+    }
+    .nav-list {
+        list-style-type: none;
+        flex-grow: 1;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .menu-hidden {
+        display: none;
+    }
+    .menu-visible {
+        display: flex;
+    }
+    .main-menu {
+        flex-flow: row;
+    }
+    .sub-menu {
+        flex-flow: column;
+    }
+    
+    .nav-item {
+        
+        font-family: "Copperplate";
+        color: #eebd52;
+        padding-bottom: 0.5em;
+        line-height: 2em;
+    }
+    
+    .main-menu > li {
+        min-width: 200px;
+    }
+    .main-menu > li > .nav-item {
+        border-bottom: 3px solid #eebd52;
+    }
+    
+    .main-menu > li > .nav-item:hover {
+        border-color: #900;
+    }
