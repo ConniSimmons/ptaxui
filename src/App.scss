@@ -1,48 +1,59 @@
-$purple: #3d102f;
+$purple: #5a1745;
 $red: #8b0002;
 $pink: #c70039;
 $orange: #ff5733;
-$myWht: #f6f6f8;
+$myWht: #f1e8c0;
 $myOrange: #f06800;
 $myYellow: #eebd52;
+
+form {
+  display: flex;
+  flex-flow: column;
+}
 
 .logo {
   font-weight: 900;
   font-size: 5em;
   font-family: "Copperplate";
-  background: linear-gradient(0deg, rgba(139,0,2,1) 17%, rgba(238,189,82,1) 100%);
   background-clip: text;
-  text-shadow: 1px 1px #eebd52;
-  color: #3d102f;
+  color: #f8dba0;
+  text-shadow: 3px 3px 2px #000;
   margin-left: 40px;
-  
 }
 
 .page-wrapper {
   display: flex;
   flex-flow: column;
   height: 100vh;
+  margin-top: 60px;
 }
 .main-header {
   display: flex;
   flex-flow: row;
-  background: linear-gradient(0deg, rgba(238,189,82,1) 0%, rgba(139,0,2,1) 59%);
-
+  background: linear-gradient(0deg, rgba(255,255,179,1) 0%, rgba(218,19,22,1) 100%);
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
 }
 
 .content {
   flex: 1;
   padding: 1em;
-  background-color: #eebd52;
-  color: #3d102f;
+  background-color: #ffffb3;
+  color: #4d1919;
   text-align: center;
 }
 
-
+.constrain {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .main-footer {
-  background: linear-gradient(0deg, rgba(139,0,2,1) 17%, rgba(238,189,82,1) 100%);
+  background: linear-gradient(0deg, rgba(218,19,22,1) 0%, rgba(255,255,179,1) 90%);
   text-align: center;
   color: #fff;
  position: fixed;
@@ -60,28 +71,3 @@ $myYellow: #eebd52;
 footer > p {
   color: #dfdbdb
 }
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #9a031e;
-}
-

@@ -26,7 +26,7 @@
     .nav-item {
         
         font-family: "Copperplate";
-        color: #eebd52;
+        color: #4d1919;
         padding-bottom: 0.5em;
         line-height: 2em;
     }
@@ -34,9 +34,11 @@
     .main-menu > li {
         min-width: 200px;
     }
+    
+    /* I don't really like how this bar looks, but I'll keep it around in case I change my mind.
     .main-menu > li > .nav-item {
         border-bottom: 3px solid #eebd52;
-    }
+    }*/
     
     .main-menu > li > .nav-item:hover {
         border-color: #900;

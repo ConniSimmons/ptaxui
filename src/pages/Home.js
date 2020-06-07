@@ -3,7 +3,8 @@
 import React, { Component as RC } from "react";
 import BdayCalc from "../components/BdayCalc";
 import Page from "../components/Page";
-import Banner from "../components/Banner";
+import { MergedContext } from '../Context';
+//import Banner from "../components/Banner";
 import "./Home.scss";
 
 export default class Home extends RC {

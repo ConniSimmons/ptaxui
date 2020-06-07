@@ -8,7 +8,7 @@ export default [
         route: '/products',
             children: [
                 {
-                    label: 'SubmitItem',
+                    label: 'Submit Your Own Item',
                     route: '/submititem'
                 },
                 {
@@ -19,6 +19,10 @@ export default [
                     label: 'Services',
                     route: '/services'
                  },
+                 {
+                    label: 'Electronics',
+                    route: '/electronics'
+                 },
                 {
                     label: 'Automotive',
                     route: '/automotive'
@@ -26,6 +30,7 @@ export default [
             ]
     },
     {
-        label: 'Pasta',
-    }
+        label: 'Login',
+        route: '/login',
+    },
 ]

@@ -1,4 +1,4 @@
-import React, {Component as RC} from 'react';
+import React, {Component as RC, useState, useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import './Navigation.css';
 import navStructure from './navStructure';

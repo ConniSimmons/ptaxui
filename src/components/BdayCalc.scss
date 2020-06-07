@@ -1,0 +1,19 @@
+
+<body class="tag">
+<header>
+<p class="hello">Hello</p>
+<p class="myname">my name is</p><br>
+</header>
+<main>
+<p><span id='display'></span></p>
+</main>
+<footer>
+
+</footer>
+<br><br>
+<center> 
+<form>
+<label><h2>Let's Make a Name Tag!</h2></label><br><br>
+<input type="text" name="message" id="user_input" placeholder="What's your FIRST NAME?"/></form>
+<input type="submit" onclick="showInput();">
+</body>
