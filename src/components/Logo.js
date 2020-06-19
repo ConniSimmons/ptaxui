@@ -1,15 +1,19 @@
 import React, {Component as RC} from 'react';
-import {AppNameContext} from '../Context';
 
-export default function Logo()
-{
-    return (
-        <AppNameContext.Consumer>
-            {(appName) => (
-                <div className="logo">
-                {appName}
+
+export default class Logo extends RC {
+    constructor(props)
+    {
+        super(props);
+    }
+
+    render()
+    {
+        return(
+            <div className="logo">
+                Pink&nbsp;Tax
+                
             </div>
-            )}
-        </AppNameContext.Consumer>
-    )
+        )
+    }
 }

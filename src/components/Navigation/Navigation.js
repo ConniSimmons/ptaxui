@@ -1,6 +1,6 @@
-import React, {Component as RC, useState, useContext, useEffect} from 'react';
+import React, {Component as RC} from 'react';
 import {Link} from 'react-router-dom';
-import './Navigation.css';
+import './Navigation.scss';
 import navStructure from './navStructure';
 
 class NavList extends RC{
@@ -13,7 +13,8 @@ class NavList extends RC{
         }
     }
 
-    componentDidMount() {
+    componentDidMount()
+    {
         this.setState({
             navItems: this.props.structure.map((item, i) =>
             {

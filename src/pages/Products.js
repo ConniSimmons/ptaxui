@@ -1,4 +1,4 @@
-//* To be built on future project developent.  This will display a list of pink and blue items with recommendations about eschewing the pink for better pricing.
+//* To be built on future project development.  This will display a list of pink and blue items with recommendations about eschewing the pink for better pricing.
 
 import React, {Component as RC} from 'react';
 

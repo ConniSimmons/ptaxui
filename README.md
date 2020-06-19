@@ -1,3 +1,37 @@
+import React, { Component as RC } from "react";
+import "./BdayCalc.scss";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+export default class BdayCalc extends RC {
+  state = {
+    startDate: new Date(),
+  };
+
+  render() {
+    const { startDate, setStartDate } = this.state;
+    return (
+        <DatePicker 
+        selected={startDate} 
+        onChange={date => setStartDate(date)}
+        maxDate={(new Date())}
+        placeholderText="What's your birthday?"
+        showYearDropdown
+        dateFormatCalendar="MMMM"
+        yearDropdownItemNumber={15}
+        scrollableYearDropdown
+        />
+    )
+  }
+
+  handleChange = (startDate) => {
+    this.setState({
+      startDate,
+    });
+  };
+}
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

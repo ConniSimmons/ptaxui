@@ -1,0 +1,59 @@
+// var to hold max number of form elements per row
+// this only works if using SCSS
+
+$MAX: 4;
+.form-row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+}
+// all DIRECT children of .form-row
+.form-row > * {
+    flex-grow: 1;
+    // we could determine the MAX number of form elements per row
+    
+}
+input[type=text] {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin-right: 1em;
+}
+.feedback-bad {
+    color: red;
+}
+.feedback-good {
+    color: green;
+}
+.login-form {
+    max-width: 70vw;
+    margin: 0 auto;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+.hoverableRedSubmit {
+  background-color: #f44336;
+  color: white;
+  max-width: 100px;
+  align-items: center;
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 20vw;
+  font-size: 16px;
+  margin: 4px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.hoverableRedSubmit:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #f44336;
+  }

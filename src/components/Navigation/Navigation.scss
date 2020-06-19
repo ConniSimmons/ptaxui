@@ -24,22 +24,15 @@
     }
     
     .nav-item {
-        
-        font-family: "Copperplate";
-        color: #4d1919;
+        text-decoration: none;
+        color: whitesmoke;
+        text-shadow: 3px 3px 2px #000;
         padding-bottom: 0.5em;
-        line-height: 2em;
+        line-height: 3em;
     }
     
     .main-menu > li {
-        min-width: 200px;
+        min-width: 90px;
     }
+
     
-    /* I don't really like how this bar looks, but I'll keep it around in case I change my mind.
-    .main-menu > li > .nav-item {
-        border-bottom: 3px solid #eebd52;
-    }*/
-    
-    .main-menu > li > .nav-item:hover {
-        border-color: #900;
-    }

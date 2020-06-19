@@ -6,6 +6,7 @@ import {
     Link,
     Redirect,
 } from 'react-router-dom';
+import config from './config'
 import SecureRoute from './components/SecureRoute';
 import './App.scss';
 import Login from "./pages/Login";
@@ -35,7 +36,7 @@ class App extends RC {
         return null;
     }
 
-    let route = `http://localhost:5555/api/${model}`;
+    let route = `${config.apiPath}/api/${model}`;
     fetch(route)
         .then((response) => {
             return response.json();
@@ -55,27 +56,22 @@ class App extends RC {
 };
 
   logmein = (event) => {
-    console.log("logging in");
     event.preventDefault();
-    this.setState({
-      loggedIn: true,
-      loggedInUser: {
-        //TODO API keys go here!!!
-        /* i.e.:
-           friends: [
-                    '5ec5ce5221a43fd18b39a76a',
-                    '5ec5cf8a7cbb90d1d19a68d3',
-                ],
-                _id: '5ec5cf7e7cbb90d1d19a68d2',
-                username: 'user2',
-                password: 'nope',
-                displayName: 'user2',
-                email: 'user2@whatever.com',
-                createdAt: '2020-05-21T00:46:54.982Z',
-                updatedAt: '2020-05-21T00:56:33.615Z',
-        */
-      },
-    });
+    const [username, password, submit] = [].slice.call(event.target.elements);
+    const route = `${config.apiPath}/login`;
+    const body ={username: username.value, password: password.value};
+    const fetchOptions = {
+      headers: {
+        'Content-Type: ': 'app.json' 
+      }
+    }
+    fetch(route)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {  
+      console.log('data: ', data);
+    })
   };
   logmeout = () => {
     this.setState({
@@ -96,9 +92,8 @@ class App extends RC {
     return (
       <Router>
         <Switch>
-          <MergedContext.Provider value={this.state}>
-            <AppNameContext.Provider value={this.state.appName}>
-              <LoggedInContext.Provider value={this.state.loggedIn}>
+          
+            <LoggedInContext.Provider value={this.state.loggedIn}>
               <LoggedInUserContext.Provider value={this.state.loggedInUser}>
               </LoggedInUserContext.Provider>
               <Route exact path="/login" component = {Login} />
@@ -106,9 +101,7 @@ class App extends RC {
               <Route exact path="/submitemail" component={SubmitEmail} />
               <Route exact path="/products" component={Products} />
               <SecureRoute exact path="/submititem" component={SubmitItem} />
-              </LoggedInContext.Provider>
-            </AppNameContext.Provider>
-          </MergedContext.Provider>
+              </LoggedInContext.Provider>        
         </Switch>
       </Router>
     );

@@ -1,42 +1,27 @@
 .banner {
     display: flex;
+    margin-top: 100px;
+    margin-bottom: 10;
     width: 100vw;
     height: 250px;
     flex-flow: column;
     background-position: center;
-    background-size: cover;
-    padding: 1em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 1;
 }
 
 .banner-title {
-    font-size: 4em;
+    font-size: 3vw;
     font-weight: 900;
     font-family: "Open Sans", sans-serif;
     color: #f8dba0;
-    text-shadow: 3px 3px 2px #000;
-    justify-content: left;
+    text-shadow: 3px 3px 2px #000000;
+    justify-content: right;
     position: fixed;
-    margin-top: 2.7em;
-    margin-left: 0.4em;  
+    margin-top: 8em;
+    margin-left: 2em;  
 }
 
 
-
-/* 
-.banner {
-    color: #f04400;
-    display: flexbox;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-    flex-direction: column;
-    width: 100%;
-    text-align: left;
-    text-indent: 10em;
-    min-height: 180px;
-    font-size: xx-large;
-    font-weight: bolder;
-    align-items: normal;
-}
-*/
 
