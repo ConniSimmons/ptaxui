@@ -1,8 +1,10 @@
-import React, { Component as RC } from 'react';
+import React, { Component as RC, useState, useContext, useEffect } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Link,
+    Redirect,
 } from 'react-router-dom';
 import config from './config'
 import SecureRoute from './components/SecureRoute';
@@ -114,38 +116,16 @@ export default class App extends RC {
                   value={this.state}
               >
                   <AppNameContext.Provider value={this.state.appName}>
-                      <LoggedInContext.Provider
-                          value={this.state.loggedIn}
-                      >
-                          <LoggedInUserContext.Provider
-                              value={this.state.loggedInUser}
-                          >
-                              <Route
-                                  exact
-                                  path='/'
-                                  component={<Home />}
-                              />
-                              <Route
-                              exact
-                              path='/viewproducts'
-                              component={<Products />}
-                              />
-                              <Route
-                              exact
-                              path='/submitemail'
-                              component={<SubmitEmail />}
-                              />
-                          </LoggedInUserContext.Provider>
-
-                          <Route exact path='/login'>
-                              <Login login={this.logmein} />
-                          </Route>
-                          <SecureRoute
-                              exact
-                              path='/submititem'
-                              component={<SubmitItem />}
-                          />
-                        </LoggedInContext.Provider>
+                  <LoggedInContext.Provider value={this.state.loggedIn}>
+            <LoggedInUserContext.Provider value={this.state.loggedInUser}>
+            <SecureRoute exact path="/submititem" component={SubmitItem} />
+            //* Brian's goes to "/login" component={SubmitItem} (in case submititen doesn't work as I envision)
+            </LoggedInUserContext.Provider>
+            <Route exact path="/login" component = {Login} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/submitemail" component={SubmitEmail} />
+            <Route exact path="/products" component={Products} />
+            </LoggedInContext.Provider>
                   </AppNameContext.Provider>
               </MergedContext.Provider>
           </Switch>
