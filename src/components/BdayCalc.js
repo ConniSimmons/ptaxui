@@ -47,11 +47,11 @@ export default class BdayCalc extends RC {
     const bday = new Date();
     return (
       <div className="container">
-        <div class="shock">
-          <b>Are you prepared to be disillusioned?</b>
+        <div className="shock">
+          <b>Brace yourself:</b>
         </div>
         <br></br>
-        <h1 class="bdayquest">Tell us your birthday, and we'll confound you with the truth. . .  </h1>   
+        <h1 className="bdayquest">Tell us your birthday, and we'll reveal a hard truth. . .  </h1>   
         <br></br>    
         <form onSubmit={ this.handleSubmit }>
           <div className="form-group">

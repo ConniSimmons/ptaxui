@@ -13,19 +13,19 @@ export default [
                 },
                 {
                     label: 'Personal Items',
-                    route: '/personalitems'
+                    route: '/products'
                 },
                 {
                     label: 'Services',
-                    route: '/services'
+                    route: '/products'
                  },
                  {
                     label: 'Electronics',
-                    route: '/electronics'
+                    route: '/products'
                  },
                 {
                     label: 'Automotive',
-                    route: '/automotive'
+                    route: '/products'
                 }
             ]
     },

@@ -1,4 +1,4 @@
-import React, { Component as RC, useState} from 'react';
+import React, { Component as RC, useState, useRef} from 'react';
 import './Tabs.scss';
 
 export class Tabs extends RC {
@@ -16,6 +16,7 @@ export class Tabs extends RC {
     }
     render()
     {
+        console.log('this.props.children: ', this.props.children);
         return (
             <section className="tab-container">
                 <section className="tab-list">
@@ -37,9 +38,11 @@ export function Tab(props)
 
 export function TabPanel(props)
 {
-    let [display, setDisplay] = useState(false);
+    let [display, setDisplay] = useState('hidden');
+    let myRef = useRef(`panel_${props.index}`);
+    console.log('display: ', display);
     return (
-        <section className={`tab-panel ${props.display || ''}`}>
+        <section ref={myRef} className={`tab-panel ${display || ''}`}>
             {props.children}
         </section>
     )

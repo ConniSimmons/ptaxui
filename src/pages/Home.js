@@ -2,7 +2,9 @@ import React, { Component as RC } from "react";
 import BdayCalc from "../components/BdayCalc";
 import Page from "../components/Page";
 import Banner from "../components/Banner";
-
+import {Link} from 'react-router-dom';
+import config from '../config';
+import {MergedContext} from '../Context';
 
 export default class Home extends RC {
   constructor(props) {

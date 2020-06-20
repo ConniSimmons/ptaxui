@@ -2,9 +2,7 @@ import React, { Component as RC } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route, 
-    Link,
-    Redirect,
+    Route
 } from 'react-router-dom';
 import config from './config'
 import SecureRoute from './components/SecureRoute';
@@ -16,10 +14,12 @@ import Products from './pages/Products';
 import Home from './pages/Home';
 import { 
   LoggedInContext, 
-  LoggedInUserContext
+  LoggedInUserContext,
+  AppNameContext,
+  MergedContext,
 } from './Context';
 
-class App extends RC {
+export default class App extends RC {
   constructor() {
     super();
     this.state = {
@@ -57,25 +57,43 @@ class App extends RC {
 
   logmein = (event) => {
     event.preventDefault();
-    const [username, password, submit] = [].slice.call(event.target.elements);
+    const [username, password] = [].slice.call(event.target.elements);
     const route = `${config.apiPath}/login`;
     const body ={username: username.value, password: password.value};
     const fetchOptions = {
       headers: {
-        'Content-Type: ': 'app.json' 
-      }
+        'Content-Type: ': 'application.json' 
+      },
+      method: 'POST',
+      body: JSON.stringify(body)
     }
-    fetch(route)
+    fetch(route, fetchOptions)
     .then((response) => {
+      if (response.status !== 200) {
+        return {};
+      }
       return response.json();
     })
     .then((data) => {  
-      console.log('data: ', data);
-    })
-  };
+      if (Object.keys(data).length)
+            {
+                this.setState({
+                    loggedIn: true,
+                    loggedInUser: data.user,
+                })
+            }
+            // need to tell the user they entered wrong username/password
+            // but i'm too lazy at the moment
+
+        })
+        .catch((err) =>
+        {
+            console.log('Error logging in...: ', err);
+        })
+    };
   logmeout = () => {
     this.setState({
-      loggedIn: false
+      loggedIn: false,
     });
   };
 
@@ -91,23 +109,47 @@ class App extends RC {
   render() {
     return (
       <Router>
-        <Switch>
-          
-            <LoggedInContext.Provider value={this.state.loggedIn}>
-              <LoggedInUserContext.Provider value={this.state.loggedInUser}>
-              </LoggedInUserContext.Provider>
-              <Route exact path="/login" component = {Login} />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/submitemail" component={SubmitEmail} />
-              <Route exact path="/products" component={Products} />
-              <SecureRoute exact path="/submititem" component={SubmitItem} />
-              </LoggedInContext.Provider>        
-        </Switch>
+          <Switch>
+              <MergedContext.Provider
+                  value={this.state}
+              >
+                  <AppNameContext.Provider value={this.state.appName}>
+                      <LoggedInContext.Provider
+                          value={this.state.loggedIn}
+                      >
+                          <LoggedInUserContext.Provider
+                              value={this.state.loggedInUser}
+                          >
+                              <Route
+                                  exact
+                                  path='/'
+                                  component={<Home />}
+                              />
+                              <Route
+                              exact
+                              path='/viewproducts'
+                              component={<Products />}
+                              />
+                              <Route
+                              exact
+                              path='/submitemail'
+                              component={<SubmitEmail />}
+                              />
+                          </LoggedInUserContext.Provider>
+
+                          <Route exact path='/login'>
+                              <Login login={this.logmein} />
+                          </Route>
+                          <SecureRoute
+                              exact
+                              path='/submititem'
+                              component={<SubmitItem />}
+                          />
+                        </LoggedInContext.Provider>
+                  </AppNameContext.Provider>
+              </MergedContext.Provider>
+          </Switch>
       </Router>
-    );
-  }
+  );
 }
-
-
-
-export default App;
+}
