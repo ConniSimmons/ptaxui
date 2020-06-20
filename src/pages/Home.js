@@ -22,7 +22,7 @@ export default class Home extends RC {
     }
     render() {
       return(
-        <div id="container">
+       
         <Page banner={this.state.banner}>
           
           <BdayCalc />
@@ -160,11 +160,10 @@ export default class Home extends RC {
             <span class="profile_description"> 
                 <a class="link" href="https://www.listenmoneymatters.com/team/candice-elliott/">Candice Elliott</a> is a substantial contributor to Listen Money Matters. She has been a personal finance writer since 2013 and has written extensively on student loan debt, investing, and credit. She has successfully navigated these areas in her own life and knows how to help others do the same. Candice has answered thousands of questions from the LMM community and spent countless hours doing research for hundreds of personal finance articles. She happily calls New Orleans, Louisiana home-the most fun city in the world. 
             </span>
-            <div class="clearfix">
-            </div>
+            
           </div>
         </Page>
-      </div>
+      
     );
   }
 }

@@ -37,7 +37,7 @@ export default class BdayCalc extends RC {
   }
 
   shock = () => {
-    let shockmsg = `Can you believe it? You have paid much more for items packaged to appeal to you, even though they contain the same stuff that men's packaging does! We all know we're girls. Do we really need special packaging to prove it?  NO. WE. DON'T!`;
+    let shockmsg = `Can you believe it?! You have needlessly spent this much more than a guy for equivalent products, simply because they were packaged to appeal to you! We know we're girls. Do we really need special packaging to prove it?  NO. WE. DON'T!`;
     this.setState({
       shockmsg
     })   
@@ -48,10 +48,11 @@ export default class BdayCalc extends RC {
     return (
       <div className="container">
         <div class="shock">
-          <b>Are you ready to be shocked?</b>
+          <b>Are you prepared to be disillusioned?</b>
         </div>
         <br></br>
-        <h1 class="bdayquest">What's your birthday?</h1>       
+        <h1 class="bdayquest">Tell us your birthday, and we'll confound you with the truth. . .  </h1>   
+        <br></br>    
         <form onSubmit={ this.handleSubmit }>
           <div className="form-group">
             <label>Select Date: </label>

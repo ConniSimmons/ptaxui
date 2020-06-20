@@ -1,9 +1,7 @@
 .banner {
     display: flex;
-    margin-top: 100px;
-    margin-bottom: 10;
     width: 100vw;
-    height: 250px;
+    height: 190px;
     flex-flow: column;
     background-position: center;
     background-size: 100% 100%;
@@ -11,17 +9,7 @@
     opacity: 1;
 }
 
-.banner-title {
-    font-size: 3vw;
-    font-weight: 900;
-    font-family: "Open Sans", sans-serif;
-    color: #f8dba0;
-    text-shadow: 3px 3px 2px #000000;
-    justify-content: right;
-    position: fixed;
-    margin-top: 8em;
-    margin-left: 2em;  
-}
+
 
 
 

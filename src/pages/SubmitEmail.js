@@ -32,23 +32,14 @@ handleSubmit(e){
       url:"http://localhost:5555/api/mailinglist", 
       data: {
           firstname: firstname,
-          emailid: emailid,  
-          
+          emailid: emailid,
       }
-  }).then((response)=>{
-      if (response.data.msg === 'success') {
-          alert("Thank you for sharing your email address with PTax!"); 
-          this.resetForm()
-      } else if (response.data.msg === 'fail') {
-          alert("Failed to send.")
-          }
-      })
+      
+  }).then(  e.target.reset()
+  )
   }
 
-  resetForm(){
-    document.getElementById('mailinglist').reset();
-  }
-
+  
   render() {
     return (
       <Page banner={this.state.banner}>
@@ -58,17 +49,16 @@ handleSubmit(e){
         <p>We won't kiss and tell. We promise!</p>
           <p><small>*Your personal information will always be confidential.*</small></p>
         <h3>Sign Up to Get Started!</h3>
-        <br></br>
         <form id="mailinglist" onSubmit={this.handleSubmit.bind(this)} method="POST">
-          <div>
+        <div onChange={this.onChangeValue}>
           <label for="firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;</label>
           <input type="text" id="firstname" />
-            </div><br></br>
+            </div>
           <div>
          <label for="emailid">Email Address&nbsp;</label>
          <input type="email" id="emailid" aria-describedby="emailHelp" />
-           </div><br></br>
-         <button class="hoverableRedSubmit" type="submit" value="Create">Submit</button>
+           </div>
+         <button class="hoverableRedSubmit" type="submit" value="Submit" >Submit</button>
         </form>
         </div>
       </Page>

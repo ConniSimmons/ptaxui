@@ -25,8 +25,7 @@ export default class Banner extends RC {
         }
         return(
             <section className="banner" style={bannerStyle}>
-                <h2 className="banner-title">{this.props.title}</h2>
-                <p className="banner-content">{this.props.content}</p>
+               
             </section>
         )
     }

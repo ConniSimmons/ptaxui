@@ -12,13 +12,15 @@ export default class Page extends RC {
     render() {
         return(
         <section className="page-wrapper">
+            <PerfectScrollbar>
             <Header />
                 {this.props.banner}
-            <PerfectScrollbar>
+            
             <main className="content">
                 {this.props.children}
             </main>
             </PerfectScrollbar>
+        
             <Footer />
         </section>
         )
