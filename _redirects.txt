@@ -1,0 +1,5 @@
+/home           /
+/SubmitEmail    /SubmitEmail
+/login          /Login
+/products       /Products
+/submititem     /SubmitItem
