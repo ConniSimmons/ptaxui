@@ -36,7 +36,7 @@ a.link {
   display: flex;
   flex-flow: column;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 60px;
 
 }
@@ -60,10 +60,11 @@ a.link {
   text-align: center;
   color: black;
   overflow: hidden;
-  position: absolute;
+  position: fixed;
   margin: 0;
   bottom: 0;
   width: 100%;  
+  flex-shrink: 0;
 }
 .logo {
   font-weight: 900;
@@ -76,7 +77,8 @@ a.link {
 }
 .content {
   flex: 1; 
-  padding: 2em;
+  padding: 1em;
+  padding-bottom: 3em;
   background-color: #f7f7d2;
   color: #4d1919;
   text-align: justify;

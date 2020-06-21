@@ -3,6 +3,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import Header from './Header';
 import Footer from './Footer';
+import Banner from './Banner';
 
 
 export default class Page extends RC {
@@ -12,16 +13,17 @@ export default class Page extends RC {
     render() {
         return(
         <section className="page-wrapper">
-            <PerfectScrollbar>
+            <div>
             <Header />
                 {this.props.banner}
             
             <main className="content">
                 {this.props.children}
             </main>
-            </PerfectScrollbar>
+            
         
             <Footer />
+            </div>
         </section>
         )
     }
