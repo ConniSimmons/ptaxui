@@ -37,7 +37,7 @@ export default class BdayCalc extends RC {
   }
 
   shock = () => {
-    let shockmsg = `Can you believe it?! You have needlessly spent this much more than a guy for equivalent products, simply because they were packaged to appeal to you! We know we're girls. Do we really need special packaging to prove it?  NO. WE. DON'T!`;
+    let shockmsg = `Can you believe it?! You have needlessly spent this much more than a guy for equivalent products, simply because they were packaged to appeal to you! We know we're girls. Do we really need special packaging to prove it?  No. . . we. . . DON'T!`;
     this.setState({
       shockmsg
     })   
