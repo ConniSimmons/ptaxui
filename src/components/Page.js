@@ -21,7 +21,6 @@ export default class Page extends RC {
                 {this.props.children}
             </main>
             
-        
             <Footer />
             </div>
         </section>
