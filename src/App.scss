@@ -43,8 +43,8 @@ a.link {
 .main-header {
   display: flex;
   flex-flow: row;
-  background: rgb(247,225,134);
-  background: linear-gradient(0deg, rgba(255, 255, 279,1) 0%, rgba(238,189,82,1) 35%, rgba(218,19,22,1) 100%) !important;
+  background: #f7e186;
+  background: linear-gradient(0deg, rgba(228,189,82,0) 24%, rgba(228,189,82,1) 48%, rgba(218,19,22,1) 100%)!important;
   text-align: center;
   position: fixed;
   top: 0;
@@ -52,7 +52,6 @@ a.link {
   right: 0;
   background: #fff;
   justify-content: space-between;
-  box-shadow: 0 0 15px 3px #fff
 }
 .main-footer {
   background: transparent;

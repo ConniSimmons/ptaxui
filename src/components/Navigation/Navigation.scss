@@ -12,6 +12,7 @@
     
     .menu-hidden {
         display: none;
+        
     }
     .menu-visible {
         display: flex;
@@ -21,11 +22,13 @@
     }
     .sub-menu {
         flex-flow: column;
+        background:rgba(218, 19, 22, 0.7);
+        padding: 5px;
     }
     
     .nav-item {
         text-decoration: none;
-        color: whitesmoke;
+        color: #ecddbe;
         text-shadow: 3px 3px 2px #000;
         padding-bottom: 0.5em;
         line-height: 3em;
