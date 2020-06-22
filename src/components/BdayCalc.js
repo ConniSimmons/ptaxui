@@ -48,11 +48,10 @@ export default class BdayCalc extends RC {
     return (
       <div className="container">
         <div className="shock">
-          <b>Brace yourself:</b>
+        <h1 className="bdayquest">Tell us your birthday, and we'll reveal a sad truth:</h1> 
+          <b>Brace yourself. . .</b>
         </div>
-        <br></br>
-        <h1 className="bdayquest">Tell us your birthday, and we'll reveal a hard truth. . .  </h1>   
-        <br></br>    
+        <br></br>   
         <form onSubmit={ this.handleSubmit }>
           <div className="form-group">
             <label>Select Date: </label>

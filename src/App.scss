@@ -6,6 +6,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
+  background-color: #f7f7d2;
 }
 article {
   margin-top: 0px;
@@ -17,7 +18,7 @@ article {
   color: #4d1919;
   font-size: 15px;
   font: Stencil Std, fantasy;
-  box-shadow: 0 0 5px 10px #da1316
+  box-shadow: 0 0 15px 10px #da1316
 }
 footer > p {
   color: black;
@@ -56,7 +57,7 @@ a.link {
 }
 .main-footer {
   background: rgb(247,247,210);
-background: linear-gradient(180deg, rgba(247,247,210,0.05) 20%, rgba(228,189,82,1) 60%, rgba(218,19,22,1) 100%);
+background: linear-gradient(180deg, rgba(247,247,210,1) 20%, rgba(228,189,82,1) 60%, rgba(218,19,22,1) 100%);
   text-align: center;
   color: black;
   overflow: hidden;
