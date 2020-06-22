@@ -17,7 +17,9 @@ export default class SubmitEmail extends RC {
   constructor(props) {
     super(props);
     this.state = {
-      banner: ''
+      banner: '',
+      firstname: '',
+      emailid: ''
   };
 }
 componentDidMount()
@@ -30,7 +32,7 @@ componentDidMount()
   });
 }
 
-handleSubmit(e){
+handleSubmit = (e) => {
   
   const firstname = document.getElementById('firstname').value;
   const emailid = document.getElementById('emailid').value;
@@ -43,7 +45,7 @@ handleSubmit(e){
       .catch(error => alert(error))
       .then(() => e.target.reset())
       e.preventDefault();
-  } 
+  };
   
 
   
