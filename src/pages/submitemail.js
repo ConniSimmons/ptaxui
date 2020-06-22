@@ -5,21 +5,12 @@ import Page from '../components/Page';
 import Banner from '../components/Banner';
 import '../components/FormStyles.scss';
 import axios from 'axios';
-import ReactDOM from 'react-dom';
-
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
 
 export default class SubmitEmail extends RC {
   constructor(props) {
     super(props);
     this.state = {
-      banner: '',
-      firstname: '',
-      emailid: ''
+      banner: ''
   };
 }
 componentDidMount()
@@ -32,21 +23,21 @@ componentDidMount()
   });
 }
 
-handleSubmit = (e) => {
-  
+handleSubmit(e){
+  e.preventDefault();
   const firstname = document.getElementById('firstname').value;
   const emailid = document.getElementById('emailid').value;
     axios({
       method: "POST", 
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "submitemail", ...this.state })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error))
-      .then(() => e.target.reset())
-      e.preventDefault();
-  };
-  
+      url:"http://localhost:5555/api/mailinglist", 
+      data: {
+          firstname: firstname,
+          emailid: emailid,
+      }
+      
+  }).then(  e.target.reset()
+  )
+  }
 
   
   render() {
@@ -74,7 +65,3 @@ handleSubmit = (e) => {
     );
   }
 }
-
-
-  
-
