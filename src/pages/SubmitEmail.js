@@ -72,6 +72,6 @@ handleSubmit(e){
   }
 }
 
-  
+ReactDOM.render(<SubmitEmail />, document.getElementById("root")); 
   
 
