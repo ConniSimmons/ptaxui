@@ -5,6 +5,7 @@ import Page from '../components/Page';
 import Banner from '../components/Banner';
 import '../components/FormStyles.scss';
 import axios from 'axios';
+import ReactDOM from 'react-dom';
 
 const encode = (data) => {
   return Object.keys(data)
@@ -72,6 +73,6 @@ handleSubmit(e){
   }
 }
 
-ReactDOM.render(<SubmitEmail />, document.getElementById("root")); 
+
   
 
