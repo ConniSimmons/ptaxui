@@ -1,6 +1,7 @@
 
 body {
   margin-bottom: 0;
+  background-color: #f7f7d2;
 }
 main {
   display: flex;
@@ -54,8 +55,8 @@ a.link {
   justify-content: space-between;
 }
 .main-footer {
-  background: transparent;
-  background: linear-gradient(0deg, rgb(218, 19, 22) 0%, rgb(238, 189, 82) 24%, rgb(247, 247, 210) 100%);
+  background: rgb(247,247,210);
+background: linear-gradient(180deg, rgba(247,247,210,0.05) 20%, rgba(228,189,82,1) 60%, rgba(218,19,22,1) 100%);
   text-align: center;
   color: black;
   overflow: hidden;

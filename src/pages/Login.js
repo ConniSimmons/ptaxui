@@ -53,7 +53,6 @@ export default class Login extends RC {
                         <p>It's senseless to pay more money for everyday purchases. That's why we're speaking up about it. Post your findings, because after all. . . pics or it didn’t happen!
                         </p>
                         <h3><center>Sign Up And Start Contributing!</center></h3>
-
                         <form className="login-form" onSubmit={this.props.login}>
                         <FormRow>
                             <label>Username &nbsp;&nbsp;</label>
@@ -64,7 +63,19 @@ export default class Login extends RC {
                             <input type='password' name='password' value={this.state.password} onChange={this.changeHandler} />
                         </FormRow>
                             <button class="hoverableRedSubmit" onClick={this.props.login}>Login</button>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
                         </form>    
+
                     </div>
                 </Page>
         )
