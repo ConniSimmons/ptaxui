@@ -1,4 +1,4 @@
 
 export default {
-    apiPath: 'https://ptaxapi.netlify.app'
+    apiPath: 'https://myptaxapi.herokuapp.com/'
 };
