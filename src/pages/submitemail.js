@@ -29,7 +29,7 @@ handleSubmit(e){
   const emailid = document.getElementById('emailid').value;
     axios({
       method: "POST", 
-      url:"http://localhost:5555/api/mailinglist", 
+      url:"https://myptaxapi.herokuapp.com/api/mailinglist", 
       data: {
           firstname: firstname,
           emailid: emailid,
