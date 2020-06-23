@@ -1,4 +1,4 @@
 
 export default {
-    apiPath: 'http://localhost:5555'
+    apiPath: 'https://ptaxapi.netlify.app'
 };

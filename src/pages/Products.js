@@ -22,26 +22,27 @@ export default class Products extends RC {
         {
             return(
                 <div>
-                    <Page><h5><b>Coming Soon. . . </b></h5>
-                    <p>Products</p>
-                    <p>Personal Items</p>
-                    <p>Services</p>
-                    <p>Electronics</p>
-                    <p>Automotive</p>
-                    <p>Submit Your Own Item</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
+                    <Page>
+                        <h5><b>Coming Soon. . . </b></h5>
+                        <p>Products</p>
+                        <p>Personal Items</p>
+                        <p>Services</p>
+                        <p>Electronics</p>
+                        <p>Automotive</p>
+                        <p>Submit Your Own Item</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
                     </Page>
                 </div>
             )
