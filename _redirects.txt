@@ -1,5 +1,0 @@
-/home           /
-/submitemail    /SubmitEmail
-/login          /Login
-/products       /Products
-/submititem     /SubmitItem
