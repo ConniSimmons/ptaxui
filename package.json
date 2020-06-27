@@ -1,10 +1,6 @@
 {
   "name": "ptaxui",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x",
-    "npm": "6.x"
-  },
   "private": true,
   "dependencies": {
     "-": "0.0.1",
@@ -34,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
-    "build": "CI='' npx react-scripts build",
+    "build": "npx react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
