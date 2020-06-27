@@ -1,6 +1,9 @@
 {
   "name": "ptaxui",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.x"
+  },
   "private": true,
   "dependencies": {
     "-": "0.0.1",
@@ -49,5 +52,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ptaxui.netlify.app"
+  "homepage": "https://myptaxui.herokuapp.com"
 }
