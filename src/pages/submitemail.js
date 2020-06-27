@@ -51,7 +51,7 @@ handleSubmit(e){
         <h3>Sign Up to Get Started!</h3>
         <form id="mailinglist" onSubmit={this.handleSubmit.bind(this)} method="POST">
         <div onChange={this.onChangeValue}>
-          <label for="firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;</label>
+          <label for="firstname">&nbsp;&nbsp;&nbsp;&nbsp;First Name&nbsp;</label>
           <input type="text" id="firstname" />
             </div>
           <div>
