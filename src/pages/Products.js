@@ -1,4 +1,4 @@
-
+//* To be built on future project development.  This will display a list of pink and blue items with recommendations to eschew the pink for better pricing.
 import React, { Component as RC } from 'react';
 import {Link} from 'react-router-dom';
 import config from '../config';
@@ -14,12 +14,13 @@ export default class Products extends RC {
         this.state = {
           banner: "",
             prodset: [],
-            
+            isLoading: true,
+            errors: null
         };
     }
         getProds() {
             axios
-            // This is where the data is hosted locally
+            // This is where the data is hosted
             //.get('http://localhost:5555/api/prodset')
             // when it's live:
             .get('https://myptaxapi.herokuapp.com/')
@@ -28,11 +29,11 @@ export default class Products extends RC {
                 console.log(response);
               this.setState({
                 prodset: response.data,
-                
+                isLoading: false
               });
             })
             // If we catch any errors connecting, let's update accordingly
-            .catch(error => this.setState({ error}));
+            .catch(error => this.setState({ error, isLoading: false }));
         }
         componentDidMount() {
             this.setState({
@@ -77,7 +78,7 @@ export default class Products extends RC {
                             )}        
                             </div>
                         </Page>    
-                  
+                    
                     
                  );
             }
