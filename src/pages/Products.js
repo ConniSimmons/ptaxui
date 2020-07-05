@@ -1,4 +1,4 @@
-//* To be built on future project development.  This will display a list of pink and blue items with recommendations to eschew the pink for better pricing.
+
 import React, { Component as RC } from 'react';
 import {Link} from 'react-router-dom';
 import config from '../config';
@@ -14,14 +14,13 @@ export default class Products extends RC {
         this.state = {
           banner: "",
             prodset: [],
-            isLoading: true,
-            errors: null
+            
         };
     }
         getProds() {
             axios
-            // This is where the data is hosted
-            // .get('http://localhost:5555/api/prodset')
+            // This is where the data is hosted locally
+            //.get('http://localhost:5555/api/prodset')
             // when it's live:
             .get('https://myptaxapi.herokuapp.com/')
             // Once we get a response and store data, let's change the loading state
@@ -29,11 +28,11 @@ export default class Products extends RC {
                 console.log(response);
               this.setState({
                 prodset: response.data,
-                isLoading: false
+                
               });
             })
             // If we catch any errors connecting, let's update accordingly
-            .catch(error => this.setState({ error, isLoading: false }));
+            .catch(error => this.setState({ error}));
         }
         componentDidMount() {
             this.setState({
@@ -46,7 +45,7 @@ export default class Products extends RC {
         render() {
             const { isLoading, prodset } = this.state;
                 return ( 
-                    <React.Fragment> 
+                   
                         
                         <Page banner={this.state.banner}>        
                         <div className="App">       
@@ -78,7 +77,7 @@ export default class Products extends RC {
                             )}        
                             </div>
                         </Page>    
-                    </React.Fragment>
+                  
                     
                  );
             }
@@ -88,4 +87,4 @@ export default class Products extends RC {
     
     
     
-    // set the db to add time stamps, and then use js to sort by stamp.
+   
