@@ -54,7 +54,7 @@ export default class BdayCalc extends RC {
         <br></br>   
         <form onSubmit={ this.handleSubmit }>
           <div className="form-group">
-            <label>Select Date: </label>
+            <label>Select Date:&nbsp;&nbsp;&nbsp;</label>
               <DatePicker 
                 selected={this.state.bday}
                 onSelect={this.handleSelect}
@@ -63,7 +63,7 @@ export default class BdayCalc extends RC {
                 dateFormatCalendar="MMMM"
                 yearDropdownItemNumber={100}
                 scrollableYearDropdown
-                placeholderText="MM/DD/YYYY"
+                placeholderText="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM/DD/YYYY"
               />
           </div>
           <div className="form-group">
