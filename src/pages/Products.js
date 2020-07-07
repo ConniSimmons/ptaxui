@@ -21,9 +21,9 @@ export default class Products extends RC {
         getProds() {
             axios
             // This is where the data is hosted
-            //.get('http://localhost:5555/api/prodset')
+            .get('http://localhost:5555/api/prodset')
             // when it's live:
-            .get('https://myptaxapi.herokuapp.com/')
+            //.get('https://myptaxapi.herokuapp.com/')
             // Once we get a response and store data, let's change the loading state
             .then(response => {
                 console.log(response);
@@ -46,19 +46,18 @@ export default class Products extends RC {
         render() {
             const { isLoading, prodset } = this.state;
                 return ( 
-                   
-                        
-                        <Page banner={this.state.banner}>        
+                    <Page banner={this.state.banner}>  
+                        <React.Fragment>
                         <div className="App">       
                             {!isLoading ? (
                                 prodset.map(prodset => {
-                                    const { _id, category, title, fprod, fprice, mprod, mprice, nettax, taxpcnt, pic } = prodset;
+                                    const { _id, category, product, fprod, fprice, mprod, mprice, nettax, taxpcnt, pic } = prodset;
                                     return (
                                         <div className="prod_box" key={_id}>
                                             
                                             <div className="ppic"><img src={pic} width="550" /></div>
                                             <div>
-                                            <h3 className="title">{title}</h3>
+                                            <h3 className="product">{product}</h3>
                                             
                                             <br></br>
                                             <div className="prod">Standard: {mprod}
@@ -77,6 +76,7 @@ export default class Products extends RC {
                                 <p>Loading . . .</p>
                             )}        
                             </div>
+                            </React.Fragment>
                         </Page>    
                     
                     
