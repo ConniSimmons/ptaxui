@@ -33,6 +33,17 @@ a.link {
     text-decoration: none;
     outline: none;    
 }
+input {
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
 .prod_box {
   width: 93vw;
     padding: 1em;

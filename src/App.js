@@ -14,7 +14,6 @@ import SubmitEmail from "./pages/submitemail";
 import SubmitItem from "./pages/SubmitItem";
 import Products from "./pages/Products";
 import Home from "./pages/Home";
-import Showprod from "./pages/Showprod";
 import {
   LoggedInContext,
   LoggedInUserContext,
@@ -113,7 +112,7 @@ export default class App extends RC {
             <AppNameContext.Provider value={this.state.appName}>
               <LoggedInContext.Provider value={this.state.loggedIn}>
                 <LoggedInUserContext.Provider value={this.state.loggedInUser}>
-                  <SecureRoute
+                  <Route
                     exact
                     path="/submititem"
                     component={SubmitItem}
@@ -123,7 +122,6 @@ export default class App extends RC {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/submitemail" component={SubmitEmail} />
                 <Route exact path="/products" component={Products} />
-                <Route exact path="/showprod" component={Showprod} />
               </LoggedInContext.Provider>
             </AppNameContext.Provider>
           </MergedContext.Provider>

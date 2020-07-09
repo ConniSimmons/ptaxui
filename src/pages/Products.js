@@ -1,4 +1,3 @@
-//* To be built on future project development.  This will display a list of pink and blue items with recommendations to eschew the pink for better pricing.
 import React, { Component as RC } from "react";
 import { Link } from "react-router-dom";
 import config from "../config";
@@ -37,42 +36,45 @@ export default class Products extends RC {
       .catch((error) => this.setState({ error, isLoading: false }));
   }
 
-    handleChange = event => {
+  handleChange = (event) => {
     this.setState({ id: event.target.value });
-    }
-    
-    handleSubmit = event => {
-        event.preventDefault();
-    
-        axios.delete(`http://localhost:5555/api/prodset/${this.state.id}`)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
-          }).then(event.target.reset());
-      }
+  };
 
-    componentDidMount() {
-        this.setState({
-         banner: (
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    axios
+      .delete(`http://localhost:5555/api/prodset/${this.state.id}`)
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      })
+      .then(event.target.reset());
+  };
+
+  componentDidMount() {
+    this.setState({
+      banner: (
         <Banner image="http://midbartherapy.com/wp-content/uploads/2017/02/about-banner-1.jpg" />
-        ),
-        });
-        this.getProds();
-    }
+      ),
+    });
+    this.getProds();
+  }
   render() {
     const { isLoading, prodset } = this.state;
     return (
       <Page banner={this.state.banner}>
         <React.Fragment>
-        <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Product ID:
-            <input type="text" name="id" onChange={this.handleChange} />
-          </label>
-          <button type="submit">Delete</button>
-        </form>
-      </div>
+          <div>
+              <p><small><center>*You must know product ID# to delete it.</center></small></p>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Product ID:
+                <input type="text" name="id" onChange={this.handleChange} />
+              </label>
+              <button type="submit">Delete</button>
+            </form>
+          </div>
           <div className="App">
             {!isLoading ? (
               prodset.map((prodset) => {
@@ -89,12 +91,11 @@ export default class Products extends RC {
                   pic,
                 } = prodset;
                 return (
-           
                   <div className="prod_box" key={_id}>
                     <div className="ppic">
                       <img src={pic} width="550" />
                     </div>
-                    
+
                     <div>
                       <h3 className="product">{product}</h3>
 
@@ -124,4 +125,3 @@ export default class Products extends RC {
     );
   }
 }
-
