@@ -63,7 +63,7 @@ export default class BdayCalc extends RC {
                 dateFormatCalendar="MMMM"
                 yearDropdownItemNumber={100}
                 scrollableYearDropdown
-                placeholderText="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MM/DD/YYYY"
+                placeholderText="MM/DD/YYYY"
               />
           </div>
           <div className="form-group">

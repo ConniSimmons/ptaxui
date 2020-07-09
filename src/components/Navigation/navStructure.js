@@ -12,19 +12,19 @@ export default [
                     route: '/submititem'
                 },
                 {
-                    label: 'Personal Items',
+                    label: 'Business',
                     route: '/products'
                 },
                 {
-                    label: 'Services',
+                    label: 'Kids',
                     route: '/products'
                  },
                  {
-                    label: 'Electronics',
+                    label: 'Personal Items',
                     route: '/products'
                  },
                 {
-                    label: 'Automotive',
+                    label: 'Sporting Goods',
                     route: '/products'
                 }
             ]

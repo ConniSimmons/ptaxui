@@ -112,11 +112,7 @@ export default class App extends RC {
             <AppNameContext.Provider value={this.state.appName}>
               <LoggedInContext.Provider value={this.state.loggedIn}>
                 <LoggedInUserContext.Provider value={this.state.loggedInUser}>
-                  <Route
-                    exact
-                    path="/submititem"
-                    component={SubmitItem}
-                  />
+                  <Route exact path="/submititem" component={SubmitItem} />
                 </LoggedInUserContext.Provider>
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/" component={Home} />

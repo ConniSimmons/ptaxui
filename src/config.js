@@ -1,9 +1,11 @@
 /*
-export default {
+export default 
+{
     apiPath: 'https://myptaxapi.herokuapp.com/'
 };
 */
 
-export default {
+export default 
+{
     apiPath: 'https://localhost:5555',
 }
