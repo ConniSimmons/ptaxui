@@ -48,7 +48,7 @@ export default class Products extends RC {
           .then(res => {
             console.log(res);
             console.log(res.data);
-          })
+          }).then(event.target.reset());
       }
 
     componentDidMount() {
