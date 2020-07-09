@@ -14,6 +14,7 @@ import SubmitEmail from "./pages/submitemail";
 import SubmitItem from "./pages/SubmitItem";
 import Products from "./pages/Products";
 import Home from "./pages/Home";
+import Showprod from "./pages/Showprod";
 import {
   LoggedInContext,
   LoggedInUserContext,
@@ -122,6 +123,7 @@ export default class App extends RC {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/submitemail" component={SubmitEmail} />
                 <Route exact path="/products" component={Products} />
+                <Route exact path="/showprod" component={Showprod} />
               </LoggedInContext.Provider>
             </AppNameContext.Provider>
           </MergedContext.Provider>

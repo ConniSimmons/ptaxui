@@ -1,4 +1,5 @@
-/*import React, {Component as RC} from 'react';
+/*
+import React, {Component as RC} from 'react';
 import {Link} from 'react-router-dom';
 import config from '../config';
 import Page from '../components/Page';
@@ -55,7 +56,7 @@ export default class Showprod extends RC {
                 {   
                     return (
                         <li key={`prod_${prodset._id}`}>
-                        <Link to={{pathname: '/create-product', charId: prodset._id}}>{prodset.product}</Link>
+                        <Link to={{pathname: '/create-product', prodId: prodset._id}}>{prodset.product}</Link>
                         <button onClick={this.deleteMe} prodset={prodset._id}>x</button>
                     </li>
 
@@ -75,21 +76,47 @@ export default class Showprod extends RC {
     render()
     {
         let user = this.context.loggedInUser;
-        return(
-            <Page>
-                <section className="profile-page constrain">
-                    <section className="player-info">
-                        <h3 className="player-name">{user.displayName}</h3>
-                    </section>
+        return ( 
+            <Page banner={this.state.banner}>  
+                <React.Fragment>
+                <div className="App">       
+                    {
+                        prodset.map(prodset => {
+                            const { _id, category, product, fprod, fprice, mprod, mprice, nettax, taxpcnt, pic } = prodset;
+                            return (
+                                <div className="prod_box" key={_id}>
+                                    
+                                    <div className="ppic"><img src={pic} width="550" /></div>
+                                    <div>
+                                    <h3 className="product">{product}</h3>
+                                    
+                                    <br></br>
+                                    <div className="prod">Standard: {mprod}
+                                      <p>Price:{mprice}</p></div>
+                                    <div className="prod">Repackaged: {fprod} <p>Price: {fprice}</p></div>
+                                    <p>PREMIUM: <b>{nettax}</b><br></br>
+                                    PTax Percent: <b>{taxpcnt}</b></p>
+                                    
+                                    </div>
+                                 
                     <div>
-                        <h3>My Characters</h3>
+                        <h3>My Products</h3>
                         <ul>
-                            {this.state.charList}
+                            {this.state.ProdList}
                         </ul>
                     </div>
-                </section>
-            </Page>
-        )
+              
+                                    
+                                </div>
+                            );
+                        })
+                    }        
+                    </div>
+                    </React.Fragment>
+                </Page>    
+            
+            
+         );
     }
 }
 Home.contextType = MergedContext;
