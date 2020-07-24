@@ -34,6 +34,7 @@ export default class SubmitItem extends RC {
     const nettax = document.getElementById("nettax").value;
     const taxpcnt = document.getElementById("taxpcnt").value;
     const pic = document.getElementById("pic").value;
+
     axios({
       method: "POST",
       url: "https://myptaxapi.herokuapp.com/api/prodset",
@@ -56,7 +57,46 @@ export default class SubmitItem extends RC {
         alert("Error adding product.");
       }
     }).then(e.target.reset());
-  }
+}
+
+    handleChange = (event) => {
+        this.setState({ id: event.target.value });
+      };
+    
+      handleSubmit = (event) => {
+        event.preventDefault();
+        const category = document.getElementById("category").value;
+        const product = document.getElementById("product").value;
+        const fprod = document.getElementById("fprod").value;
+        const fprice = document.getElementById("fprice").value;
+        const mprod = document.getElementById("mprod").value;
+        const mprice = document.getElementById("mprice").value;
+        const nettax = document.getElementById("nettax").value;
+        const taxpcnt = document.getElementById("taxpcnt").value;
+        const pic = document.getElementById("pic").value;
+    
+        axios({
+            method: "PUT",
+            //url: `http://localhost:5555/api/prodset/${this.state.id}`,
+            url: `https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`,
+            data: {
+              category: category,
+              product: product,
+              fprod: fprod,
+              fprice: fprice,
+              mprod: mprod,
+              mprice: mprice,
+              nettax: nettax,
+              taxpcnt: taxpcnt,
+              pic: pic,
+            },
+          })
+          .then((res) => {
+            console.log('Error updating: ', res);
+            console.log(res.data);
+          })
+          .then(event.target.reset());
+    }
 
   render() {
     return (
@@ -133,6 +173,13 @@ export default class SubmitItem extends RC {
               rows="1"
               cols="50"
               placeholder="Link to Picture"
+            ></textarea>
+            <br />
+            <textarea
+              id="_id"
+              rows="1"
+              cols="50"
+              placeholder="ID# (required to update)"
             ></textarea>
             <br />
 

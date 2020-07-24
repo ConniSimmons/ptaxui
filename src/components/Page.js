@@ -3,7 +3,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import Header from './Header';
 import Footer from './Footer';
-import Banner from './Banner';
 
 
 export default class Page extends RC {

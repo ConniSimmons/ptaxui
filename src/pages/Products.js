@@ -21,9 +21,9 @@ export default class Products extends RC {
   getProds() {
     axios
       // This is where the data is hosted
-      .get("http://localhost:5555/api/prodset")
+      //.get("http://localhost:5555/api/prodset")
       // when it's live:
-      //.get('https://myptaxapi.herokuapp.com/')
+      .get('https://myptaxapi.herokuapp.com/api/prodset')
       // Once we get a response and store data, let's change the loading state
       .then((response) => {
         console.log(response);
@@ -44,7 +44,8 @@ export default class Products extends RC {
     event.preventDefault();
 
     axios
-      .delete(`http://localhost:5555/api/prodset/${this.state.id}`)
+      //.delete(`http://localhost:5555/api/prodset/${this.state.id}`)
+      .delete(`https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`)
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -99,7 +100,7 @@ export default class Products extends RC {
                     <div>
                       <h3 className="product">{product}</h3>
 
-                      <br></br>
+                      <br />
                       <div className="prod">
                         Standard: {mprod}
                         <p>Price:{mprice}</p>
