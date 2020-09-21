@@ -3,11 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect,
+  // Link,
+  // Redirect,
 } from "react-router-dom";
 import config from "./config";
-import SecureRoute from "./components/SecureRoute";
+// import SecureRoute from "./components/SecureRoute";
 import "./App.scss";
 import Login from "./pages/Login";
 import SubmitEmail from "./pages/submitemail";

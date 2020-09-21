@@ -44,7 +44,7 @@ export default class BdayCalc extends RC {
   }
 
   render() {
-    const bday = new Date();
+    // const bday = new Date();
     return (
       <div className="container">
         <div className="shock">

@@ -1,14 +1,14 @@
 import React, {Component as RC} from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar'
+// import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import Header from './Header';
 import Footer from './Footer';
 
 
 export default class Page extends RC {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     render() {
         return(
         <section className="page-wrapper">

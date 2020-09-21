@@ -2,10 +2,10 @@ import React, {Component as RC} from 'react';
 import './Banner.scss';
 
 export default class Banner extends RC {
-    constructor(props)
-    {
-        super(props);
-    }
+    // constructor(props)
+    // {
+    //     super(props);
+    // }
     render()
     {
         let bannerStyle = {};

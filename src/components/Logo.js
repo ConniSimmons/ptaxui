@@ -2,10 +2,10 @@ import React, {Component as RC} from 'react';
 
 
 export default class Logo extends RC {
-    constructor(props)
-    {
-        super(props);
-    }
+    // constructor(props)
+    // {
+    //     super(props);
+    // }
 
     render()
     {

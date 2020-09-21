@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import { FormRow } from '../components/FormComponents';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-var myId = 1469;
+// var myId = 1469;
 
 export default class Login extends RC {
     constructor(props) {

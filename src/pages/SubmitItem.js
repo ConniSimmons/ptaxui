@@ -1,7 +1,7 @@
 import React, { Component as RC } from "react";
-import { Link } from "react-router-dom";
-import config from "../config";
-import { MergedContext } from "../Context";
+// import { Link } from "react-router-dom";
+// import config from "../config";
+// import { MergedContext } from "../Context";
 import axios from "axios";
 import Page from "../components/Page";
 import Banner from "../components/Banner";
@@ -77,8 +77,8 @@ export default class SubmitItem extends RC {
     
         axios({
             method: "PUT",
-            //url: `http://localhost:5555/api/prodset/${this.state.id}`,
-            url: `https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`,
+            url: `http://localhost:5555/api/prodset/${this.state.id}`,
+            //url: `https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`,
             data: {
               category: category,
               product: product,

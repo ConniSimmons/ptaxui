@@ -1,7 +1,7 @@
 import React, { Component as RC } from "react";
-import { Link } from "react-router-dom";
-import config from "../config";
-import { MergedContext } from "../Context";
+// import { Link } from "react-router-dom";
+// import config from "../config";
+// import { MergedContext } from "../Context";
 import axios from "axios";
 import Page from "../components/Page";
 import Banner from "../components/Banner";
@@ -21,9 +21,9 @@ export default class Products extends RC {
   getProds() {
     axios
       // This is where the data is hosted
-      //.get("http://localhost:5555/api/prodset")
+      .get("http://localhost:5555/api/prodset")
       // when it's live:
-      .get('https://myptaxapi.herokuapp.com/api/prodset')
+      //.get('https://myptaxapi.herokuapp.com/api/prodset')
       // Once we get a response and store data, let's change the loading state
       .then((response) => {
         console.log(response);
@@ -44,8 +44,8 @@ export default class Products extends RC {
     event.preventDefault();
 
     axios
-      //.delete(`http://localhost:5555/api/prodset/${this.state.id}`)
-      .delete(`https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`)
+      .delete(`http://localhost:5555/api/prodset/${this.state.id}`)
+      //.delete(`https://myptaxapi.herokuapp.com/api/prodset/${this.state.id}`)
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -81,7 +81,7 @@ export default class Products extends RC {
               prodset.map((prodset) => {
                 const {
                   _id,
-                  category,
+                  // category,
                   product,
                   fprod,
                   fprice,
@@ -94,7 +94,7 @@ export default class Products extends RC {
                 return (
                   <div className="prod_box" key={_id}>
                     <div className="ppic">
-                      <img src={pic} width="550" />
+                      <img src={pic} alt="" width="550" />
                     </div>
 
                     <div>
